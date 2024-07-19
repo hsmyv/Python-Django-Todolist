@@ -14,9 +14,16 @@
         <input class="btn" type="submit" name="Create Task">
 
     </form>
-
+    <ul>
     {% for task in tasks %}
-        {{task.title}}
+            <li>
+                <a href="{% url 'update-task' task.id %}">Update</a>
+                <a href="{% url 'delete-task' task.id %}">Delete</a>
+
+                {{task.title}}
+            </li>        
     {% endfor %}
+    </ul>
+
 </body>
 </html>
